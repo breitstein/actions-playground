@@ -1,0 +1,23 @@
+name: IMprime data atual
+on:
+ push:
+
+jobs:
+ imprime_data_ubuntu:
+  name: Imprime_data_atual_ubuntu
+  runs-out: ubuntu-latest
+  
+  steps:
+   - name: Imprime data atual - ubuntu
+     run: date
+     
+ imprime_data_windows:
+  name: Imprime_data_atual_windows
+  runs-out: windows-latest
+  needs: imprime_data_ubuntu
+  
+  steps:
+   - name: Imprime data atual - ubuntu
+     run: date
+   
+ 
