@@ -1,0 +1,21 @@
+name: Workflow Actions
+
+on:
+  push:
+
+jobs:
+  checkout_code:
+    name: Checkout
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout rep
+      uses: actions/checkout@v3.3.0
+    
+    - name: Cria artefato
+      uses: actions/upload-artifact@v3.1.2
+      with:
+      	name: ${{ vars.VARIAVEL_A1 }}
+	path: .
+				
+				
